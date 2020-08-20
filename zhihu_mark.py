@@ -33,12 +33,15 @@ def request_content(url,contentpattern):
     print(response.getcode())
     content=response.read().decode('utf-8')
     #####################3`
-    c1 = BeautifulSoup(content, 'lxml')
+    #soup = BeautifulSoup(content, 'lxml')
+    soup = BeautifulSoup(content, 'html.parser')
+    print(soup.find_all('meta'))
+    input('xxxx')
 #    a1 = c1.find_all('div', class_='zm-item')
 #    a1 = c1.find_all('div', class_='CollectionDetailPageHeader-hint')
 #    a1 = c1.find_all('h2', class_='ContentItem-title')
-    a1 = c1.find_all('div', class_='Card-headerText')
-    print('>>>>>1', a1)
+#    a1 = c1.find_all('div', class_='Card-headerText')
+#    print('>>>>>1', a1)
     ############
     pattern=re.compile(contentpattern,re.S)
 #    items=re.findall(pattern,content)
